@@ -77,3 +77,21 @@ async function initSeries() {
 
 initOverview();
 initSeries();
+
+// Contact form: submit without leaving the page
+const form = document.getElementById("contact");
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    status.textContent = "Sending...";
+    try {
+      const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      const json = await res.json();
+      if (json.success) { form.reset(); status.textContent = "Thanks. I'll get back to you soon."; }
+      else { status.textContent = "Something went wrong. Please DM me on Instagram instead."; }
+    } catch {
+      status.textContent = "Something went wrong. Please DM me on Instagram instead.";
+    }
+  });
+}

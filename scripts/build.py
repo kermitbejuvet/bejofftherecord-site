@@ -16,11 +16,12 @@ ROOT = Path(__file__).resolve().parent.parent
 # Site settings. Empty links are hidden.
 SITE = {
     "name": "Bej Off The Record",
-    "url": "",  # e.g. "https://example.com" once the domain is connected
+    "url": "https://bejofftherecord.com",
     "tiktok": "https://www.tiktok.com/@bejofftherecord",
-    "instagram": "",
-    "youtube": "",
-    "email": "",
+    "instagram": "https://www.instagram.com/bejofftherecord/",
+    "youtube": "https://www.youtube.com/@bejofftherecord",
+    # Web3Forms access key: messages go to the owner's inbox, the address stays hidden.
+    "web3forms_key": "",
 }
 
 DATA = json.loads((ROOT / "data" / "series-videos.json").read_text())
@@ -61,7 +62,8 @@ def page(path, title, description, body, active="", body_attrs=""):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{root}assets/avatar.png">
+<meta property="og:image" content="{SITE["url"]}/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{root}assets/avatar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,11 +257,23 @@ def build_series_pages():
 
 
 def build_collabs():
-    contact = (
-        f'<div class="btn-row"><a class="btn pink" href="mailto:{SITE["email"]}">{esc(SITE["email"])}</a></div>'
-        if SITE["email"] else
-        f'<div class="btn-row"><a class="btn pink" href="{SITE["tiktok"]}" target="_blank" rel="noopener">Message me on TikTok</a></div>'
-    )
+    if SITE["web3forms_key"]:
+        contact = f"""<form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contact">
+      <input type="hidden" name="access_key" value="{SITE["web3forms_key"]}">
+      <input type="hidden" name="subject" value="New collab message from bejofftherecord.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="company" placeholder="Company or project">
+      <textarea name="message" placeholder="What do you have in mind?" required></textarea>
+      <div><button class="btn pink" type="submit">Send</button></div>
+      <p class="form-status" id="form-status"></p>
+    </form>"""
+    else:
+        contact = (
+            f'<div class="btn-row"><a class="btn pink" href="{SITE["instagram"]}" target="_blank" rel="noopener">DM me on Instagram</a>'
+            f'<a class="btn lime" href="{SITE["tiktok"]}" target="_blank" rel="noopener">Message me on TikTok</a></div>'
+        )
     body = f"""
 <section class="grid-bg">
   <div class="wrap">
@@ -294,6 +308,7 @@ def build_sitemap():
     (ROOT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'
     )
+    (ROOT / "CNAME").write_text(SITE["url"].split("//")[1] + "\n")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE['url']}/sitemap.xml\n")
     print("Wrote sitemap.xml and robots.txt")
 
