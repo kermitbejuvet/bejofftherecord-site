@@ -1,0 +1,380 @@
+[
+  {
+    "series": "cover-atlas",
+    "slug": "bang-bang",
+    "video": "7556979366052302102",
+    "title": {
+      "en": "Bang Bang (My Baby Shot Me Down): the versions around the world",
+      "de": "Bang Bang (My Baby Shot Me Down): die Versionen aus aller Welt",
+      "es": "Bang Bang (My Baby Shot Me Down): las versiones del mundo"
+    },
+    "lead": {
+      "en": "Sonny Bono wrote \"Bang Bang (My Baby Shot Me Down)\" for Cher, who released it in 1966. The same year Nancy Sinatra recorded her darker version, Dalida sang it in Italian and Sheila in French, and the melody kept travelling from Yugoslavia and Hong Kong to Romania and the Czech Republic.",
+      "de": "Sonny Bono schrieb \"Bang Bang (My Baby Shot Me Down)\" für Cher, die den Song 1966 veröffentlichte. Im selben Jahr nahm Nancy Sinatra ihre düsterere Version auf, Dalida sang ihn auf Italienisch und Sheila auf Französisch, und die Melodie reiste weiter von Jugoslawien und Hongkong bis nach Rumänien und Tschechien.",
+      "es": "Sonny Bono escribió \"Bang Bang (My Baby Shot Me Down)\" para Cher, que la publicó en 1966. Ese mismo año Nancy Sinatra grabó su versión más oscura, Dalida la cantó en italiano y Sheila en francés, y la melodía siguió viajando de Yugoslavia y Hong Kong a Rumania y la República Checa."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "Cher, 1966", "de": "Cher, 1966", "es": "Cher, 1966"}},
+      {"label": {"en": "Written by", "de": "Geschrieben von", "es": "Escrita por"}, "value": {"en": "Sonny Bono", "de": "Sonny Bono", "es": "Sonny Bono"}},
+      {"label": {"en": "Versions here", "de": "Versionen hier", "es": "Versiones aquí"}, "value": {"en": "8", "de": "8", "es": "8"}}
+    ],
+    "body": {
+      "en": [
+        "\"Bang Bang\" is a short song about two children who play at shooting each other and grow up to be lovers, until one of them leaves. Sonny Bono wrote it and Cher released it in 1966, and it became one of her first big solo hits.",
+        "The version most people know today is not Cher's. Nancy Sinatra recorded it the same year with a bare, tremolo guitar arrangement, and in 2003 Quentin Tarantino put that recording over the opening of Kill Bill: Volume 1, which gave the song a second life.",
+        "In Europe the song moved fast. Dalida recorded it in Italian and Sheila in French in 1966, and versions followed in Yugoslavia, Hong Kong, Romania and, decades later, the Czech Republic. The melody stays almost the same in every language. What changes is the singer's distance from the story."
+      ],
+      "de": [
+        "\"Bang Bang\" ist ein kurzer Song über zwei Kinder, die Erschießen spielen und als Erwachsene ein Paar werden, bis einer von beiden geht. Sonny Bono schrieb ihn, Cher veröffentlichte ihn 1966, und er wurde einer ihrer ersten großen Solo-Hits.",
+        "Die Version, die heute die meisten kennen, ist nicht die von Cher. Nancy Sinatra nahm den Song im selben Jahr mit einem kargen Tremolo-Gitarren-Arrangement auf, und 2003 legte Quentin Tarantino genau diese Aufnahme über den Vorspann von Kill Bill: Volume 1. Damit bekam der Song ein zweites Leben.",
+        "In Europa verbreitete sich der Song schnell. Dalida nahm ihn 1966 auf Italienisch auf, Sheila auf Französisch, und es folgten Versionen in Jugoslawien, Hongkong, Rumänien und Jahrzehnte später in Tschechien. Die Melodie bleibt in jeder Sprache fast gleich. Was sich ändert, ist die Distanz der Sängerin zur Geschichte."
+      ],
+      "es": [
+        "\"Bang Bang\" es una canción corta sobre dos niños que juegan a dispararse y de mayores se enamoran, hasta que uno de ellos se va. La escribió Sonny Bono y Cher la publicó en 1966, y se convirtió en uno de sus primeros grandes éxitos en solitario.",
+        "La versión que hoy conoce más gente no es la de Cher. Nancy Sinatra la grabó ese mismo año con un arreglo desnudo de guitarra con trémolo, y en 2003 Quentin Tarantino puso esa grabación en el inicio de Kill Bill: Volumen 1, lo que le dio a la canción una segunda vida.",
+        "En Europa la canción se movió rápido. Dalida la grabó en italiano y Sheila en francés en 1966, y siguieron versiones en Yugoslavia, Hong Kong, Rumania y, décadas después, la República Checa. La melodía casi no cambia de un idioma a otro. Lo que cambia es la distancia de quien canta con la historia."
+      ]
+    },
+    "versions": [
+      {"artist": "Cher", "song": "Bang Bang (My Baby Shot Me Down)", "place": "USA", "language": "English", "year": 1966, "original": true},
+      {"artist": "Nancy Sinatra", "song": "Bang Bang (My Baby Shot Me Down)", "place": "USA", "language": "English", "year": 1966},
+      {"artist": "Dalida", "song": "Bang Bang", "place": "Italy", "language": "Italian", "year": 1966},
+      {"artist": "Sheila", "song": "Bang Bang", "place": "France", "language": "French", "year": 1966},
+      {"artist": "Đorđe Marjanović", "song": "Bang Bang", "place": "Yugoslavia", "language": "Serbo-Croatian"},
+      {"artist": "Betty Chung", "song": "Bang Bang", "place": "Hong Kong"},
+      {"artist": "Anda Călugăreanu", "song": "Bang Bang", "place": "Romania", "language": "Romanian"},
+      {"artist": "Lucie Bílá", "song": "Bang Bang", "place": "Czech Republic", "language": "Czech"}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "strangers-in-the-night",
+    "video": "7556974262125382934",
+    "title": {
+      "en": "Strangers in the Night: the versions around the world",
+      "de": "Strangers in the Night: die Versionen aus aller Welt",
+      "es": "Strangers in the Night: las versiones del mundo"
+    },
+    "lead": {
+      "en": "\"Strangers in the Night\" was composed by the German bandleader Bert Kaempfert and became a number one hit for Frank Sinatra in 1966. Within a few years it had German, French, Italian, Spanish, Japanese, Turkish and Russian versions.",
+      "de": "\"Strangers in the Night\" wurde vom deutschen Bandleader Bert Kaempfert komponiert und 1966 ein Nummer-eins-Hit für Frank Sinatra. Wenige Jahre später gab es Fassungen auf Deutsch, Französisch, Italienisch, Spanisch, Japanisch, Türkisch und Russisch.",
+      "es": "\"Strangers in the Night\" fue compuesta por el director de orquesta alemán Bert Kaempfert y en 1966 fue un número uno para Frank Sinatra. En pocos años ya tenía versiones en alemán, francés, italiano, español, japonés, turco y ruso."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "Frank Sinatra, 1966", "de": "Frank Sinatra, 1966", "es": "Frank Sinatra, 1966"}},
+      {"label": {"en": "Music by", "de": "Musik von", "es": "Música de"}, "value": {"en": "Bert Kaempfert", "de": "Bert Kaempfert", "es": "Bert Kaempfert"}},
+      {"label": {"en": "Versions here", "de": "Versionen hier", "es": "Versiones aquí"}, "value": {"en": "8", "de": "8", "es": "8"}}
+    ],
+    "body": {
+      "en": [
+        "Few people think of \"Strangers in the Night\" as a German song, but the melody came from Bert Kaempfert, a bandleader from Hamburg, with English lyrics by Charles Singleton and Eddie Snyder. Frank Sinatra's 1966 recording topped the charts in the United States and the United Kingdom and won him Grammy awards.",
+        "That success sent the song straight back across the Atlantic in translation. In the episode you hear it as \"Fremde in der Nacht\" in German, \"Étrangère dans la nuit\" in French and \"Solo più che mai\" in Italian, then in Japanese, as \"İki Yabancı\" in Turkey, as \"Extraños en la noche\" by the Mexican singer Alberto Vázquez, and finally in Russian in the Soviet Union.",
+        "The lyric is simple enough to survive any language: two strangers, one look, one night. Most versions keep Sinatra's slow swing. A few turn it into a ballad."
+      ],
+      "de": [
+        "Kaum jemand hält \"Strangers in the Night\" für einen deutschen Song, doch die Melodie stammt von Bert Kaempfert, einem Bandleader aus Hamburg. Den englischen Text schrieben Charles Singleton und Eddie Snyder. Frank Sinatras Aufnahme von 1966 erreichte in den USA und in Großbritannien Platz eins und brachte ihm Grammys ein.",
+        "Dieser Erfolg schickte den Song sofort in Übersetzung zurück über den Atlantik. In der Folge hört man ihn als \"Fremde in der Nacht\" auf Deutsch, als \"Étrangère dans la nuit\" auf Französisch und als \"Solo più che mai\" auf Italienisch, dann auf Japanisch, als \"İki Yabancı\" in der Türkei, als \"Extraños en la noche\" vom mexikanischen Sänger Alberto Vázquez und schließlich auf Russisch in der Sowjetunion.",
+        "Der Text ist einfach genug, um jede Sprache zu überstehen: zwei Fremde, ein Blick, eine Nacht. Die meisten Versionen behalten Sinatras langsamen Swing. Einige machen eine Ballade daraus."
+      ],
+      "es": [
+        "Poca gente piensa en \"Strangers in the Night\" como una canción alemana, pero la melodía es de Bert Kaempfert, un director de orquesta de Hamburgo, con letra en inglés de Charles Singleton y Eddie Snyder. La grabación de Frank Sinatra de 1966 llegó al número uno en Estados Unidos y el Reino Unido y le dio varios Grammy.",
+        "Ese éxito hizo que la canción cruzara de nuevo el Atlántico, traducida. En el episodio se escucha como \"Fremde in der Nacht\" en alemán, \"Étrangère dans la nuit\" en francés y \"Solo più che mai\" en italiano, luego en japonés, como \"İki Yabancı\" en Turquía, como \"Extraños en la noche\" en la voz del mexicano Alberto Vázquez y, por último, en ruso en la Unión Soviética.",
+        "La letra es tan simple que sobrevive a cualquier idioma: dos desconocidos, una mirada, una noche. La mayoría de las versiones mantiene el swing lento de Sinatra. Algunas la convierten en balada."
+      ]
+    },
+    "versions": [
+      {"artist": "Frank Sinatra", "song": "Strangers in the Night", "place": "USA", "language": "English", "year": 1966, "original": true},
+      {"artist": "Peter Beil", "song": "Fremde in der Nacht", "place": "Germany", "language": "German"},
+      {"artist": "Hervé Vilard", "song": "Étrangère dans la nuit", "place": "France", "language": "French"},
+      {"artist": "Claudio Villa", "song": "Solo più che mai", "place": "Italy", "language": "Italian"},
+      {"artist": "Teruhiko Saigō", "song": "Strangers in the Night", "place": "Japan", "language": "Japanese"},
+      {"artist": "Tanju Okan", "song": "İki Yabancı", "place": "Turkey", "language": "Turkish"},
+      {"artist": "Alberto Vázquez", "song": "Extraños en la noche", "place": "Mexico", "language": "Spanish"},
+      {"artist": "Renat Ibragimov", "song": "Putniki v nochi", "place": "USSR", "language": "Russian"}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "tombe-la-neige",
+    "video": "7557072496210578710",
+    "title": {
+      "en": "Tombe la neige: the versions around the world",
+      "de": "Tombe la neige: die Versionen aus aller Welt",
+      "es": "Tombe la neige: las versiones del mundo"
+    },
+    "lead": {
+      "en": "\"Tombe la neige\" is a 1963 ballad by Salvatore Adamo, the Sicilian-born singer who grew up in Belgium. Adamo recorded it himself in Italian, German, Spanish and Japanese, and it was covered in Turkish by Ajda Pekkan and in Korean.",
+      "de": "\"Tombe la neige\" ist eine Ballade von 1963 von Salvatore Adamo, dem in Sizilien geborenen und in Belgien aufgewachsenen Sänger. Adamo nahm sie selbst auf Italienisch, Deutsch, Spanisch und Japanisch auf, auf Türkisch sang sie Ajda Pekkan, außerdem gibt es eine koreanische Fassung.",
+      "es": "\"Tombe la neige\" es una balada de 1963 de Salvatore Adamo, el cantante nacido en Sicilia y criado en Bélgica. Adamo la grabó él mismo en italiano, alemán, español y japonés, Ajda Pekkan la cantó en turco y también existe una versión coreana."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "Salvatore Adamo, 1963", "de": "Salvatore Adamo, 1963", "es": "Salvatore Adamo, 1963"}},
+      {"label": {"en": "Language", "de": "Sprache", "es": "Idioma"}, "value": {"en": "French", "de": "Französisch", "es": "Francés"}},
+      {"label": {"en": "Versions here", "de": "Versionen hier", "es": "Versiones aquí"}, "value": {"en": "7", "de": "7", "es": "7"}}
+    ],
+    "body": {
+      "en": [
+        "Salvatore Adamo was born in Sicily in 1943 and moved to Belgium as a child, where his father worked in the coal mines. He wrote and sang in French, and \"Tombe la neige\" made him a star across the French-speaking world in 1963.",
+        "What makes this song unusual in Cover Atlas is who carried it abroad. Instead of handing it to local singers, Adamo recorded many of the translations himself: \"Cade la neve\" in Italian, a German version, \"Cae la nieve\" in Spanish and a Japanese version, where the song became one of his best known.",
+        "Other singers took it further. Ajda Pekkan recorded it in Turkish as \"Her Yerde Kar Var\", and a Korean version followed. In every language the image stays the same: snow falling, and someone who is not coming."
+      ],
+      "de": [
+        "Salvatore Adamo wurde 1943 in Sizilien geboren und kam als Kind nach Belgien, wo sein Vater im Kohlebergbau arbeitete. Er schrieb und sang auf Französisch, und \"Tombe la neige\" machte ihn 1963 in der ganzen frankophonen Welt zum Star.",
+        "Ungewöhnlich ist an diesem Song, wer ihn ins Ausland getragen hat. Statt ihn lokalen Sängern zu überlassen, nahm Adamo viele Übersetzungen selbst auf: \"Cade la neve\" auf Italienisch, eine deutsche Fassung, \"Cae la nieve\" auf Spanisch und eine japanische Version, mit der der Song dort zu einem seiner bekanntesten wurde.",
+        "Andere trugen ihn weiter. Ajda Pekkan nahm ihn auf Türkisch als \"Her Yerde Kar Var\" auf, und es folgte eine koreanische Fassung. In jeder Sprache bleibt das Bild gleich: Schnee fällt, und jemand kommt nicht."
+      ],
+      "es": [
+        "Salvatore Adamo nació en Sicilia en 1943 y se mudó de niño a Bélgica, donde su padre trabajaba en las minas de carbón. Escribía y cantaba en francés, y \"Tombe la neige\" lo convirtió en estrella en todo el mundo francófono en 1963.",
+        "Lo raro de esta canción dentro de Cover Atlas es quién la llevó al extranjero. En lugar de dársela a cantantes locales, Adamo grabó él mismo muchas de las traducciones: \"Cade la neve\" en italiano, una versión en alemán, \"Cae la nieve\" en español y una versión japonesa, con la que la canción se volvió una de las más conocidas de su repertorio allí.",
+        "Otras voces la llevaron más lejos. Ajda Pekkan la grabó en turco como \"Her Yerde Kar Var\" y después llegó una versión coreana. En todos los idiomas la imagen es la misma: cae la nieve y alguien no va a venir."
+      ]
+    },
+    "versions": [
+      {"artist": "Salvatore Adamo", "song": "Tombe la neige", "place": "Belgium", "language": "French", "year": 1963, "original": true},
+      {"artist": "Ajda Pekkan", "song": "Her Yerde Kar Var", "place": "Turkey", "language": "Turkish"},
+      {"artist": "Salvatore Adamo", "song": "Cade la neve", "place": "Italy", "language": "Italian"},
+      {"artist": "Salvatore Adamo", "song": "German version", "place": "Germany", "language": "German"},
+      {"artist": "Salvatore Adamo", "song": "Cae la nieve", "place": "Spain", "language": "Spanish"},
+      {"artist": "Salvatore Adamo", "song": "Yuki ga furu", "place": "Japan", "language": "Japanese"},
+      {"artist": "Lee Suk", "song": "Korean version", "place": "South Korea", "language": "Korean"}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "those-were-the-days",
+    "video": "7557331268913122563",
+    "title": {
+      "en": "Those Were the Days: the Russian song behind the hit",
+      "de": "Those Were the Days: das russische Lied hinter dem Hit",
+      "es": "Those Were the Days: la canción rusa detrás del éxito"
+    },
+    "lead": {
+      "en": "\"Those Were the Days\" started as \"Dorogoi dlinnoyu\", a Russian romance from the 1920s made famous by Alexander Vertinsky. Gene Raskin wrote English lyrics, and Mary Hopkin's 1968 recording, produced by Paul McCartney, made it a worldwide hit with versions in French, Italian, German, Spanish, Turkish, Finnish and Polish.",
+      "de": "\"Those Were the Days\" begann als \"Dorogoi dlinnoyu\", eine russische Romanze aus den 1920ern, die Alexander Vertinsky berühmt machte. Gene Raskin schrieb den englischen Text, und Mary Hopkins Aufnahme von 1968, produziert von Paul McCartney, machte daraus einen Welthit mit Versionen auf Französisch, Italienisch, Deutsch, Spanisch, Türkisch, Finnisch und Polnisch.",
+      "es": "\"Those Were the Days\" empezó como \"Dorogoi dlinnoyu\", un romance ruso de los años 20 que popularizó Alexander Vertinsky. Gene Raskin escribió la letra en inglés, y la grabación de Mary Hopkin de 1968, producida por Paul McCartney, la convirtió en un éxito mundial con versiones en francés, italiano, alemán, español, turco, finés y polaco."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "Dorogoi dlinnoyu, 1920s", "de": "Dorogoi dlinnoyu, 1920er", "es": "Dorogoi dlinnoyu, años 20"}},
+      {"label": {"en": "Global hit", "de": "Welthit", "es": "Éxito mundial"}, "value": {"en": "Mary Hopkin, 1968", "de": "Mary Hopkin, 1968", "es": "Mary Hopkin, 1968"}},
+      {"label": {"en": "Versions here", "de": "Versionen hier", "es": "Versiones aquí"}, "value": {"en": "9", "de": "9", "es": "9"}}
+    ],
+    "body": {
+      "en": [
+        "Most people hear \"Those Were the Days\" as an English pub song about lost youth. Its melody is Russian. \"Dorogoi dlinnoyu\" (\"By the long road\") was written in the 1920s, with music by Boris Fomin and words by Konstantin Podrevsky, and Alexander Vertinsky's recording carried it through the Russian emigre world.",
+        "In the early 1960s the American songwriter Gene Raskin wrote new English lyrics. In 1968 Paul McCartney produced it for the young Welsh singer Mary Hopkin on the new Apple label, and it went to number one in the UK. Hopkin also recorded it in other languages for different markets.",
+        "Then the covers came. Dalida made it French as \"Le temps des fleurs\", and versions followed in Italian, Turkish, Finnish and Polish. Almost every version keeps the same shape: a slow verse, then a chorus that speeds up like a memory you can't stop."
+      ],
+      "de": [
+        "Die meisten hören \"Those Were the Days\" als englisches Pub-Lied über verlorene Jugend. Die Melodie ist russisch. \"Dorogoi dlinnoyu\" (\"Auf der langen Straße\") entstand in den 1920ern, mit Musik von Boris Fomin und Text von Konstantin Podrewski, und Alexander Vertinskys Aufnahme trug sie durch die russische Emigrantenwelt.",
+        "Anfang der 1960er schrieb der amerikanische Songwriter Gene Raskin einen neuen englischen Text. 1968 produzierte Paul McCartney den Song für die junge walisische Sängerin Mary Hopkin auf dem neuen Label Apple, und er erreichte Platz eins in Großbritannien. Hopkin nahm ihn auch in anderen Sprachen für verschiedene Märkte auf.",
+        "Dann kamen die Cover. Dalida machte ihn als \"Le temps des fleurs\" französisch, und es folgten Versionen auf Italienisch, Türkisch, Finnisch und Polnisch. Fast jede Version behält dieselbe Form: eine langsame Strophe, dann ein Refrain, der schneller wird wie eine Erinnerung, die man nicht anhalten kann."
+      ],
+      "es": [
+        "Mucha gente escucha \"Those Were the Days\" como una canción de pub inglés sobre la juventud perdida. La melodía es rusa. \"Dorogoi dlinnoyu\" (\"Por el largo camino\") se escribió en los años 20, con música de Borís Fomín y letra de Konstantín Podrevski, y la grabación de Alexander Vertinsky la llevó por todo el mundo de la emigración rusa.",
+        "A principios de los 60, el compositor estadounidense Gene Raskin escribió una nueva letra en inglés. En 1968 Paul McCartney la produjo para la joven cantante galesa Mary Hopkin en el nuevo sello Apple, y llegó al número uno en el Reino Unido. Hopkin también la grabó en otros idiomas para distintos mercados.",
+        "Después llegaron las versiones. Dalida la hizo francesa como \"Le temps des fleurs\", y siguieron versiones en italiano, turco, finés y polaco. Casi todas mantienen la misma forma: una estrofa lenta y luego un estribillo que se acelera como un recuerdo que no puedes frenar."
+      ]
+    },
+    "versions": [
+      {"artist": "Alexander Vertinsky", "song": "Dorogoi dlinnoyu", "place": "Russia", "language": "Russian", "original": true},
+      {"artist": "Mary Hopkin", "song": "Those Were the Days", "place": "UK", "language": "English", "year": 1968},
+      {"artist": "Semiramis Pekkan", "song": "Bu Ne Biçim Hayat", "place": "Turkey", "language": "Turkish"},
+      {"artist": "Dalida", "song": "Le temps des fleurs", "place": "France", "language": "French"},
+      {"artist": "Dalida", "song": "Quelli erano giorni", "place": "Italy", "language": "Italian"},
+      {"artist": "Mary Hopkin", "song": "An jenem Tag", "place": "Germany", "language": "German"},
+      {"artist": "Mary Hopkin", "song": "Qué tiempo tan feliz", "place": "Spain", "language": "Spanish"},
+      {"artist": "Päivi Paunu", "song": "Oi niitä aikoja", "place": "Finland", "language": "Finnish"},
+      {"artist": "Halina Kunicka", "song": "To były piękne dni", "place": "Poland", "language": "Polish"}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "poupee-de-cire-poupee-de-son",
+    "video": "7557726954649128214",
+    "title": {
+      "en": "Poupée de cire, poupée de son: the Eurovision winner in every language",
+      "de": "Poupée de cire, poupée de son: der Eurovision-Sieger in allen Sprachen",
+      "es": "Poupée de cire, poupée de son: la ganadora de Eurovisión en todos los idiomas"
+    },
+    "lead": {
+      "en": "Serge Gainsbourg wrote \"Poupée de cire, poupée de son\" for France Gall, who won the 1965 Eurovision Song Contest with it for Luxembourg. Gall recorded it in German and Japanese herself, and it was covered in Czech, Danish, Finnish and Catalan.",
+      "de": "Serge Gainsbourg schrieb \"Poupée de cire, poupée de son\" für France Gall, die damit 1965 den Eurovision Song Contest für Luxemburg gewann. Gall nahm den Song selbst auf Deutsch und Japanisch auf, Cover gab es auf Tschechisch, Dänisch, Finnisch und Katalanisch.",
+      "es": "Serge Gainsbourg escribió \"Poupée de cire, poupée de son\" para France Gall, que ganó con ella Eurovisión 1965 representando a Luxemburgo. Gall la grabó ella misma en alemán y japonés, y hubo versiones en checo, danés, finés y catalán."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "France Gall, 1965", "de": "France Gall, 1965", "es": "France Gall, 1965"}},
+      {"label": {"en": "Written by", "de": "Geschrieben von", "es": "Escrita por"}, "value": {"en": "Serge Gainsbourg", "de": "Serge Gainsbourg", "es": "Serge Gainsbourg"}},
+      {"label": {"en": "Eurovision", "de": "Eurovision", "es": "Eurovisión"}, "value": {"en": "Winner 1965", "de": "Sieg 1965", "es": "Ganadora 1965"}}
+    ],
+    "body": {
+      "en": [
+        "France Gall was 17 when she sang \"Poupée de cire, poupée de son\" at the 1965 Eurovision Song Contest. She represented Luxembourg, not France, and she won.",
+        "The lyric, by Serge Gainsbourg, is sung by a \"wax doll\" who sings about love without having lived it. Many listeners have read that as Gainsbourg's ironic comment on the teenage pop star singing his words, which is part of why the song is still discussed today.",
+        "The song travelled in two ways. France Gall recorded it herself in German and in Japanese, where it became one of her best known songs. Other singers covered it in Czech, Danish, Finnish and Catalan."
+      ],
+      "de": [
+        "France Gall war 17, als sie \"Poupée de cire, poupée de son\" beim Eurovision Song Contest 1965 sang. Sie trat für Luxemburg an, nicht für Frankreich, und gewann.",
+        "Im Text von Serge Gainsbourg singt eine \"Wachspuppe\" über die Liebe, ohne sie erlebt zu haben. Viele haben das als ironischen Kommentar Gainsbourgs über den Teenie-Popstar gelesen, der seine Worte singt, und auch deshalb wird über den Song bis heute gesprochen.",
+        "Der Song reiste auf zwei Wegen. France Gall nahm ihn selbst auf Deutsch und auf Japanisch auf, wo er zu einem ihrer bekanntesten Lieder wurde. Andere coverten ihn auf Tschechisch, Dänisch, Finnisch und Katalanisch."
+      ],
+      "es": [
+        "France Gall tenía 17 años cuando cantó \"Poupée de cire, poupée de son\" en Eurovisión 1965. Representó a Luxemburgo, no a Francia, y ganó.",
+        "En la letra de Serge Gainsbourg canta una \"muñeca de cera\" que habla del amor sin haberlo vivido. Muchos la han leído como un comentario irónico de Gainsbourg sobre la joven estrella pop que cantaba sus palabras, y por eso la canción se sigue comentando hoy.",
+        "La canción viajó de dos maneras. France Gall la grabó ella misma en alemán y en japonés, donde se convirtió en una de sus canciones más conocidas. Otras voces la versionaron en checo, danés, finés y catalán."
+      ]
+    },
+    "versions": [
+      {"artist": "France Gall", "song": "Poupée de cire, poupée de son", "place": "Luxembourg", "language": "French", "year": 1965, "original": true},
+      {"artist": "France Gall", "song": "Yumemiru Chanson Ningyō", "place": "Japan", "language": "Japanese"},
+      {"artist": "France Gall", "song": "Das war eine schöne Party", "place": "Germany", "language": "German"},
+      {"artist": "Eva Pilarová", "song": "Vosková panenka", "place": "Czechoslovakia", "language": "Czech"},
+      {"artist": "Lille Bror", "song": "Voksdukke", "place": "Denmark", "language": "Danish"},
+      {"artist": "Ritva Palukka", "song": "Vahanukke", "place": "Finland", "language": "Finnish"},
+      {"artist": "Nina", "song": "Nina", "place": "Catalonia", "language": "Catalan"}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "parole-parole",
+    "video": "7561494441303739670",
+    "title": {
+      "en": "Parole parole: the duet in every language",
+      "de": "Parole parole: das Duett in allen Sprachen",
+      "es": "Parole parole: el dúo en todos los idiomas"
+    },
+    "lead": {
+      "en": "\"Parole parole\" was first recorded in 1972 by Mina with the actor Alberto Lupo. A year later Dalida and Alain Delon made it a hit in French as \"Paroles, paroles\", and the duet was recorded in Portuguese, German, Spanish, Japanese and Turkish.",
+      "de": "\"Parole parole\" wurde 1972 erstmals von Mina mit dem Schauspieler Alberto Lupo aufgenommen. Ein Jahr später machten Dalida und Alain Delon daraus auf Französisch den Hit \"Paroles, paroles\", und das Duett wurde auf Portugiesisch, Deutsch, Spanisch, Japanisch und Türkisch aufgenommen.",
+      "es": "\"Parole parole\" la grabaron por primera vez Mina y el actor Alberto Lupo en 1972. Un año después Dalida y Alain Delon la convirtieron en un éxito en francés como \"Paroles, paroles\", y el dúo se grabó en portugués, alemán, español, japonés y turco."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "Mina and Alberto Lupo, 1972", "de": "Mina und Alberto Lupo, 1972", "es": "Mina y Alberto Lupo, 1972"}},
+      {"label": {"en": "French hit", "de": "Französischer Hit", "es": "Éxito en Francia"}, "value": {"en": "Dalida and Alain Delon, 1973", "de": "Dalida und Alain Delon, 1973", "es": "Dalida y Alain Delon, 1973"}},
+      {"label": {"en": "Versions here", "de": "Versionen hier", "es": "Versiones aquí"}, "value": {"en": "7", "de": "7", "es": "7"}}
+    ],
+    "body": {
+      "en": [
+        "\"Parole parole\" is a conversation. A man speaks soft compliments over the music, and a woman answers in song that she has heard it all before: words, words, words. The Italian original, from 1972, paired the singer Mina with the actor Alberto Lupo.",
+        "The format made it easy to copy. You need one singer and one famous speaking voice. In 1973 Dalida recorded it in French with Alain Delon, and \"Paroles, paroles\" became one of the best known French songs of the decade.",
+        "In the episode you also hear it in Portuguese from Brazil, in German as \"Worte, Worte\" with Dalida again, in Spanish, in Japanese and in Turkish by Ajda Pekkan. In every version the joke is the same, and it is always on the man."
+      ],
+      "de": [
+        "\"Parole parole\" ist ein Dialog. Ein Mann spricht sanfte Komplimente über die Musik, und eine Frau antwortet singend, dass sie das alles schon kennt: Worte, Worte, Worte. Das italienische Original von 1972 brachte die Sängerin Mina mit dem Schauspieler Alberto Lupo zusammen.",
+        "Das Format war leicht zu übertragen. Man braucht eine Sängerin und eine berühmte Sprechstimme. 1973 nahm Dalida den Song mit Alain Delon auf Französisch auf, und \"Paroles, paroles\" wurde eines der bekanntesten französischen Lieder des Jahrzehnts.",
+        "In der Folge hört man ihn außerdem auf Portugiesisch aus Brasilien, auf Deutsch als \"Worte, Worte\" wieder mit Dalida, auf Spanisch, auf Japanisch und auf Türkisch von Ajda Pekkan. In jeder Version ist die Pointe dieselbe, und sie geht immer auf Kosten des Mannes."
+      ],
+      "es": [
+        "\"Parole parole\" es una conversación. Un hombre recita cumplidos suaves sobre la música y una mujer le contesta cantando que ya lo ha oído todo: palabras, palabras, palabras. El original italiano, de 1972, unió a la cantante Mina con el actor Alberto Lupo.",
+        "El formato era fácil de copiar. Hace falta una cantante y una voz famosa que hable. En 1973 Dalida la grabó en francés con Alain Delon, y \"Paroles, paroles\" se convirtió en una de las canciones francesas más conocidas de la década.",
+        "En el episodio también se escucha en portugués desde Brasil, en alemán como \"Worte, Worte\" otra vez con Dalida, en español, en japonés y en turco con Ajda Pekkan. En todas las versiones la broma es la misma, y siempre es a costa del hombre."
+      ]
+    },
+    "versions": [
+      {"artist": "Mina and Alberto Lupo", "song": "Parole parole", "place": "Italy", "language": "Italian", "year": 1972, "original": true},
+      {"artist": "Maysa", "song": "Palavras, palavras", "place": "Brazil", "language": "Portuguese"},
+      {"artist": "Dalida and Alain Delon", "song": "Paroles, paroles", "place": "France", "language": "French", "year": 1973},
+      {"artist": "Dalida and Friedrich Schütter", "song": "Worte, Worte", "place": "Germany", "language": "German"},
+      {"artist": "Nicole and Hugo", "song": "Palabras, palabras", "language": "Spanish"},
+      {"artist": "Akiko Nakamura", "song": "Japanese version", "place": "Japan", "language": "Japanese"},
+      {"artist": "Ajda Pekkan", "song": "Palavra palavra", "place": "Turkey", "language": "Turkish"}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "lambada",
+    "video": "7698400968525794593",
+    "title": {
+      "en": "Lambada isn't Brazilian. It's Bolivian.",
+      "de": "Lambada ist nicht brasilianisch. Sondern bolivianisch.",
+      "es": "La Lambada no es brasileña. Es boliviana."
+    },
+    "lead": {
+      "en": "The song the world knows as \"Lambada\" started as \"Llorando se fue\", recorded by the Bolivian group Los Kjarkas in 1981. It was covered in Peru and Brazil, became a worldwide hit for Kaoma in 1989, and was recorded in Arabic, Japanese, Korean, Turkish, Cantonese and Hindi.",
+      "de": "Der Song, den die Welt als \"Lambada\" kennt, begann als \"Llorando se fue\", 1981 aufgenommen von der bolivianischen Gruppe Los Kjarkas. Er wurde in Peru und Brasilien gecovert, 1989 mit Kaoma ein Welthit und auf Arabisch, Japanisch, Koreanisch, Türkisch, Kantonesisch und Hindi aufgenommen.",
+      "es": "La canción que el mundo conoce como \"Lambada\" empezó como \"Llorando se fue\", grabada por el grupo boliviano Los Kjarkas en 1981. Tuvo versiones en Perú y Brasil, fue un éxito mundial con Kaoma en 1989 y se grabó en árabe, japonés, coreano, turco, cantonés e hindi."
+    },
+    "facts": [
+      {"label": {"en": "Original", "de": "Original", "es": "Original"}, "value": {"en": "Llorando se fue", "de": "Llorando se fue", "es": "Llorando se fue"}},
+      {"label": {"en": "Written in", "de": "Entstanden in", "es": "Escrita en"}, "value": {"en": "Bolivia, 1981", "de": "Bolivien, 1981", "es": "Bolivia, 1981"}},
+      {"label": {"en": "Versions here", "de": "Versionen hier", "es": "Versiones aquí"}, "value": {"en": "10 + 1 bonus", "de": "10 + 1 Bonus", "es": "10 + 1 extra"}}
+    ],
+    "body": {
+      "en": [
+        "Most people remember Lambada as the sound of Brazil in 1989. The melody is older. Los Kjarkas, a folk group from Bolivia, recorded \"Llorando se fue\" in 1981. A Peruvian version by Cuarteto Continental followed, then a Brazilian one by Marcia Ferreira, and in 1989 the French-Brazilian group Kaoma turned it into a worldwide hit.",
+        "Kaoma's single did not credit Los Kjarkas. The original writers went to court and won. The dance on the video is Brazilian. The song is Bolivian.",
+        "Meanwhile the melody kept moving: Amr Diab sang it in Arabic in Egypt, and versions appeared in Japan, South Korea, Turkey, Hong Kong and India. In 2011 it returned once more, sampled in Jennifer Lopez and Pitbull's \"On the Floor\"."
+      ],
+      "de": [
+        "Die meisten erinnern sich an Lambada als Sound Brasiliens im Jahr 1989. Die Melodie ist älter. Los Kjarkas, eine Folkgruppe aus Bolivien, nahmen \"Llorando se fue\" 1981 auf. Es folgte eine peruanische Version von Cuarteto Continental, dann eine brasilianische von Marcia Ferreira, und 1989 machte die französisch-brasilianische Gruppe Kaoma daraus einen Welthit.",
+        "Auf Kaomas Single wurden Los Kjarkas nicht genannt. Die ursprünglichen Autoren zogen vor Gericht und gewannen. Der Tanz im Video ist brasilianisch. Der Song ist bolivianisch.",
+        "Die Melodie reiste währenddessen weiter: Amr Diab sang sie in Ägypten auf Arabisch, und es entstanden Versionen in Japan, Südkorea, der Türkei, Hongkong und Indien. 2011 kam sie noch einmal zurück, gesampelt in \"On the Floor\" von Jennifer Lopez und Pitbull."
+      ],
+      "es": [
+        "Mucha gente recuerda la Lambada como el sonido de Brasil en 1989. La melodía es anterior. Los Kjarkas, un grupo folclórico de Bolivia, grabaron \"Llorando se fue\" en 1981. Después llegó una versión peruana de Cuarteto Continental, luego una brasileña de Marcia Ferreira, y en 1989 el grupo franco-brasileño Kaoma la convirtió en un éxito mundial.",
+        "El sencillo de Kaoma no daba crédito a Los Kjarkas. Los autores originales fueron a juicio y ganaron. El baile del video es brasileño. La canción es boliviana.",
+        "Mientras tanto, la melodía siguió viajando: Amr Diab la cantó en árabe en Egipto y aparecieron versiones en Japón, Corea del Sur, Turquía, Hong Kong e India. En 2011 volvió una vez más, sampleada en \"On the Floor\" de Jennifer Lopez y Pitbull."
+      ]
+    },
+    "versions": [
+      {"artist": "Los Kjarkas", "song": "Llorando se fue", "place": "Bolivia", "language": "Spanish", "year": 1981, "original": true},
+      {"artist": "Cuarteto Continental", "song": "Llorando se fue", "place": "Peru", "language": "Spanish", "year": 1984},
+      {"artist": "Marcia Ferreira", "song": "Lambada", "place": "Brazil", "language": "Portuguese", "year": 1986},
+      {"artist": "Kaoma", "song": "Lambada", "place": "France", "language": "Portuguese", "year": 1989},
+      {"artist": "Amr Diab", "song": "Leily", "place": "Egypt", "language": "Arabic", "year": 1989},
+      {"artist": "Akemi Ishii", "song": "Lambada", "place": "Japan", "language": "Japanese"},
+      {"artist": "Kim Wan-sun", "song": "Lambada", "place": "South Korea", "language": "Korean"},
+      {"artist": "Rüya Çağla", "song": "Lambada", "place": "Turkey", "language": "Turkish", "year": 1990},
+      {"artist": "Aling Choi", "song": "Lambada", "place": "Hong Kong", "language": "Cantonese", "year": 1990},
+      {"artist": "Ghayal (film)", "song": "Sochna Kya", "place": "India", "language": "Hindi", "year": 1990},
+      {"artist": "Jennifer Lopez and Pitbull", "song": "On the Floor (sample)", "place": "USA", "language": "English", "year": 2011, "bonus": true}
+    ]
+  },
+  {
+    "series": "cover-atlas",
+    "slug": "ya-mustafa",
+    "video": "7703988925961899296",
+    "title": {
+      "en": "Ya Mustafa: one Egyptian song, eight countries",
+      "de": "Ya Mustafa: ein ägyptisches Lied, acht Länder",
+      "es": "Ya Mustafa: una canción egipcia, ocho países"
+    },
+    "lead": {
+      "en": "\"Ya Mustafa\" is an Egyptian song. Bob Azzam's French version became a European hit in 1960, and the same year it was recorded in Spanish, Danish and Japanese, followed by German, Serbo-Croatian, Catalan and, in 1994, Hindi.",
+      "de": "\"Ya Mustafa\" ist ein ägyptisches Lied. Bob Azzams französische Version wurde 1960 ein Hit in Europa, im selben Jahr entstanden Fassungen auf Spanisch, Dänisch und Japanisch, später auf Deutsch, Serbokroatisch, Katalanisch und 1994 auf Hindi.",
+      "es": "\"Ya Mustafa\" es una canción egipcia. La versión en francés de Bob Azzam fue un éxito europeo en 1960, y ese mismo año se grabó en español, danés y japonés, y después en alemán, serbocroata, catalán y, en 1994, en hindi."
+    },
+    "facts": [
+      {"label": {"en": "Written in", "de": "Entstanden in", "es": "Escrita en"}, "value": {"en": "Egypt", "de": "Ägypten", "es": "Egipto"}},
+      {"label": {"en": "First European hit", "de": "Erster Hit in Europa", "es": "Primer éxito europeo"}, "value": {"en": "Bob Azzam, 1960", "de": "Bob Azzam, 1960", "es": "Bob Azzam, 1960"}},
+      {"label": {"en": "Countries here", "de": "Länder hier", "es": "Países aquí"}, "value": {"en": "8", "de": "8", "es": "8"}}
+    ],
+    "body": {
+      "en": [
+        "\"Ya Mustafa\" mixes Arabic, French and Italian in one chorus, which is a clue to where it came from: the cosmopolitan Egypt of the 1950s. The episode opens with the Egyptian recording by Mohamed Fawzi.",
+        "Europe heard it through Bob Azzam, a singer of Lebanese origin who grew up in Egypt. His French version \"Mustapha\" was a hit in 1960. The same year José Guardiola sang it in Spanish, a Danish film used it, and in Japan Kyu Sakamoto recorded it as \"Kanashiki rokujussai\".",
+        "Then it kept going: Leo Leandros in German, Đorđe Marjanović in Yugoslavia in 1961, Rudy Ventura in Catalan, and decades later the Hindi film Aatish in 1994. Eight countries in the video, and Catalonia on top."
+      ],
+      "de": [
+        "\"Ya Mustafa\" mischt Arabisch, Französisch und Italienisch in einem Refrain, und das verrät, woher der Song kommt: aus dem kosmopolitischen Ägypten der 1950er. Die Folge beginnt mit der ägyptischen Aufnahme von Mohamed Fawzi.",
+        "Europa hörte ihn durch Bob Azzam, einen Sänger libanesischer Herkunft, der in Ägypten aufwuchs. Seine französische Version \"Mustapha\" war 1960 ein Hit. Im selben Jahr sang José Guardiola ihn auf Spanisch, ein dänischer Film nutzte ihn, und in Japan nahm Kyu Sakamoto ihn als \"Kanashiki rokujussai\" auf.",
+        "Danach ging es weiter: Leo Leandros auf Deutsch, Đorđe Marjanović 1961 in Jugoslawien, Rudy Ventura auf Katalanisch und Jahrzehnte später 1994 der Hindi-Film Aatish. Acht Länder im Video, dazu Katalonien."
+      ],
+      "es": [
+        "\"Ya Mustafa\" mezcla árabe, francés e italiano en un mismo estribillo, y eso dice de dónde viene: del Egipto cosmopolita de los años 50. El episodio empieza con la grabación egipcia de Mohamed Fawzi.",
+        "Europa la conoció gracias a Bob Azzam, un cantante de origen libanés criado en Egipto. Su versión en francés, \"Mustapha\", fue un éxito en 1960. Ese mismo año José Guardiola la cantó en español, una película danesa la usó y en Japón Kyu Sakamoto la grabó como \"Kanashiki rokujussai\".",
+        "Y siguió: Leo Leandros en alemán, Đorđe Marjanović en Yugoslavia en 1961, Rudy Ventura en catalán y, décadas después, la película hindi Aatish en 1994. Ocho países en el video, y Cataluña además."
+      ]
+    },
+    "versions": [
+      {"artist": "Mohamed Fawzi", "song": "Ya Mustafa", "place": "Egypt", "language": "Arabic", "original": true},
+      {"artist": "Bob Azzam", "song": "Mustapha", "place": "France", "language": "French", "year": 1960},
+      {"artist": "José Guardiola", "song": "Ya Mustafa", "place": "Spain", "language": "Spanish", "year": 1960},
+      {"artist": "Leo Leandros", "song": "Mustapha", "place": "Germany", "language": "German"},
+      {"artist": "Soldaterkammerater på vagt (film)", "song": "Ya Mustafa", "place": "Denmark", "language": "Danish", "year": 1960},
+      {"artist": "Đorđe Marjanović", "song": "Mustafa", "place": "Yugoslavia", "language": "Serbo-Croatian", "year": 1961},
+      {"artist": "Kyu Sakamoto with Danny Iida and Paradise King", "song": "Kanashiki rokujussai", "place": "Japan", "language": "Japanese", "year": 1960},
+      {"artist": "Rudy Ventura", "song": "Mustafà", "place": "Catalonia", "language": "Catalan"},
+      {"artist": "Aatish (film)", "song": "Ya Mustafa Ya Mustafa", "place": "India", "language": "Hindi", "year": 1994}
+    ]
+  }
+]
