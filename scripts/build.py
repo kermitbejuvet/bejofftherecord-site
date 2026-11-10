@@ -309,7 +309,7 @@ def build_sitemap():
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'
     )
     (ROOT / "CNAME").write_text(SITE["url"].split("//")[1] + "\n")
-    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE['url']}/sitemap.xml\n")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /preview/\nSitemap: {SITE['url']}/sitemap.xml\n")
     print("Wrote sitemap.xml and robots.txt")
 
 

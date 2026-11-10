@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /preview/
 Sitemap: https://bejofftherecord.com/sitemap.xml
