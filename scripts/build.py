@@ -94,6 +94,14 @@ def jsonld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + "</script>"
 
 
+def iso_datetime(meta):
+    """Full ISO 8601 datetime with timezone, as Google expects for uploadDate."""
+    from datetime import datetime, timezone
+    if meta.get("ts"):
+        return datetime.fromtimestamp(meta["ts"], timezone.utc).isoformat(timespec="seconds")
+    return meta["date"] + "T00:00:00+00:00"
+
+
 def plural(n, lang):
     return f"{n} {t(UI['episodes'] if n != 1 else UI['episode'], lang)}"
 
@@ -426,13 +434,13 @@ def build_episode(lang, ep):
 """
     schema = [breadcrumb(lang, [(t(UI["nav_series"], lang), "series/"), (sname, f"series/{slug}/"), (title, path)]), {
         "@context": "https://schema.org", "@type": "VideoObject", "name": title, "description": t(ep["lead"], lang),
-        "uploadDate": m["date"], "thumbnailUrl": SITE["url"] + "/assets/og.jpg",
+        "uploadDate": iso_datetime(m), "thumbnailUrl": SITE["url"] + "/assets/og.jpg",
         "embedUrl": f"https://www.tiktok.com/player/v1/{ep['video']}", "url": tiktok, "inLanguage": "en",
         "isPartOf": {"@type": "CreativeWorkSeries", "name": sname, "url": SITE["url"] + url(lang, f"series/{slug}/")},
         "creator": {"@type": "Organization", "name": SITE["name"], "url": SITE["url"]},
     }, {
         "@context": "https://schema.org", "@type": "Article", "headline": title, "description": t(ep["lead"], lang),
-        "datePublished": m["date"], "inLanguage": lang,
+        "datePublished": iso_datetime(m), "inLanguage": lang,
         "author": {"@type": "Person", "name": "Bej", "url": SITE["url"] + url(lang, "about/")},
         "publisher": {"@type": "Organization", "name": SITE["name"], "logo": {"@type": "ImageObject", "url": SITE["url"] + "/assets/avatar.png"}},
         "mainEntityOfPage": SITE["url"] + url(lang, path),
