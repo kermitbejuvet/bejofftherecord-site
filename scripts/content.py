@@ -44,6 +44,8 @@ UI = {
     },
     "oldest": {"en": "Oldest first", "de": "Älteste zuerst", "es": "Más antiguos primero"},
     "newest": {"en": "Newest first", "de": "Neueste zuerst", "es": "Más recientes primero"},
+    "part": {"en": "Part", "de": "Teil", "es": "Parte"},
+    "parts_title": {"en": "The series, part by part", "de": "Die Serie, Teil für Teil", "es": "La serie, parte por parte"},
     "rights": {"en": "Bej Off The Record", "de": "Bej Off The Record", "es": "Bej Off The Record"},
 }
 

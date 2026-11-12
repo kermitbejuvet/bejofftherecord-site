@@ -193,3 +193,17 @@ body.read { background: var(--paper); }
   .ep-item .lite { max-width: 240px; }
   .langs { margin-left: 0; }
 }
+
+/* Artist pages (multi-part series) */
+.artist-facts { max-width: 920px; margin-top: 28px; }
+.toc { margin: 36px 0 12px; }
+.toc ol { list-style: none; display: grid; gap: 8px; }
+.toc a { color: var(--navy); font-weight: 500; }
+.part { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; padding: 40px 0; border-top: 1px solid rgba(2,32,26,.15); scroll-margin-top: 100px; }
+.part-video .small { display: block; margin-top: 10px; font-size: 14px; color: var(--navy); }
+.part-text h2 { margin-top: 4px !important; }
+.part-text p:not(.ep-meta) { font-family: var(--serif); font-size: 19px; line-height: 1.7; margin-bottom: 16px; max-width: 680px; }
+@media (max-width: 760px) {
+  .part { grid-template-columns: 1fr; gap: 18px; }
+  .part-video { max-width: 240px; }
+}

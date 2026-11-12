@@ -35,7 +35,13 @@ META = json.loads((ROOT / "data" / "video-meta.json").read_text())
 EPISODES = []
 for f in sorted((ROOT / "data" / "episodes").glob("*.json")):
     EPISODES.extend(json.loads(f.read_text()))
-EPISODE_BY_VIDEO = {e["video"]: e for e in EPISODES}
+EPISODE_BY_VIDEO = {}
+PART_BY_VIDEO = {}
+for _e in EPISODES:
+    EPISODE_BY_VIDEO[_e["video"]] = _e
+    for _n, _p in enumerate(_e.get("parts", []), start=1):
+        EPISODE_BY_VIDEO[_p["video"]] = _e
+        PART_BY_VIDEO[_p["video"]] = (_n, _p)
 WRITTEN = []
 
 
@@ -333,7 +339,14 @@ def build_series_page(lang, slug):
     for i, vid in enumerate(vids, start=1):
         m = META.get(vid, {"date": "", "text": ""})
         ep = EPISODE_BY_VIDEO.get(vid)
-        if ep:
+        if vid in PART_BY_VIDEO:
+            n, part = PART_BY_VIDEO[vid]
+            link = f"{ep_url(lang, ep)}#part-{n}"
+            artist = t(ep["title"], lang).split(":")[0]
+            text, text_lang = part["body"][lang][0], lang
+            heading = f'<h2 class="ep-title"><a href="{link}">{esc(artist)}, {t(UI["part"], lang)} {n}: {esc(t(part["title"], lang))}</a></h2>'
+            read = f'<a class="read" href="{link}">{t(UI["read_episode"], lang)}</a>'
+        elif ep:
             text, text_lang = t(ep["lead"], lang), lang
             heading = f'<h2 class="ep-title"><a href="{ep_url(lang, ep)}">{esc(t(ep["title"], lang))}</a></h2>'
             read = f'<a class="read" href="{ep_url(lang, ep)}">{t(UI["read_episode"], lang)}</a>'
@@ -451,6 +464,76 @@ def build_episode(lang, ep):
     page(lang, path, f"{title}, {sname}", desc, body, active="nav_series", body_class="read", schema=schema)
 
 
+def build_artist(lang, ep):
+    """One page for a multi-part series about one artist (e.g. Frontwoman)."""
+    slug = ep["series"]
+    sname = t(SERIES[slug]["name"], lang)
+    path = f"series/{slug}/{ep['slug']}/"
+    title = t(ep["title"], lang)
+    artist = title.split(":")[0]
+    facts = "".join(f'<div><dt>{esc(t(f["label"], lang))}</dt><dd>{esc(t(f["value"], lang))}</dd></div>' for f in ep["facts"])
+    toc = "".join(
+        f'<li><a href="#part-{n}">{t(UI["part"], lang)} {n}: {esc(t(p["title"], lang))}</a></li>'
+        for n, p in enumerate(ep["parts"], start=1)
+    )
+    parts_html = ""
+    videos_schema = []
+    for n, p in enumerate(ep["parts"], start=1):
+        m = META[p["video"]]
+        tiktok = f"https://www.tiktok.com/@bejofftherecord/video/{p['video']}"
+        paras = "".join(f"<p>{esc(x)}</p>" for x in p["body"][lang])
+        ptitle = f"{t(UI['part'], lang)} {n}: {t(p['title'], lang)}"
+        parts_html += f"""
+        <section class="part" id="part-{n}">
+          <div class="part-video">{lite_video(p['video'], f"{artist}, {ptitle}", lang)}
+            <a class="small" href="{tiktok}" target="_blank" rel="noopener">{t(UI['open_tiktok'], lang)}</a></div>
+          <div class="part-text">
+            <p class="ep-meta"><span class="num">{t(UI['part'], lang)} {n}</span> <time datetime="{m['date']}">{fmt_date(m['date'], lang)}</time></p>
+            <h2>{esc(t(p['title'], lang))}</h2>
+            {paras}
+          </div>
+        </section>"""
+        videos_schema.append({
+            "@type": "VideoObject", "name": f"{artist}, {ptitle}", "description": p["body"][lang][0],
+            "uploadDate": iso_datetime(m), "thumbnailUrl": SITE["url"] + "/assets/og.jpg",
+            "embedUrl": f"https://www.tiktok.com/player/v1/{p['video']}", "url": tiktok, "inLanguage": "en",
+        })
+    others = [e for e in EPISODES if e["series"] == slug and e is not ep]
+    more = "".join(f'<li><a href="{ep_url(lang, o)}">{esc(t(o["title"], lang))}</a></li>' for o in others)
+    first = META[ep["parts"][0]["video"]]
+    body = f"""
+<article class="reading">
+  <div class="wrap">
+    <nav class="crumbs"><a href="{url(lang, 'series/')}">{t(UI['nav_series'], lang)}</a> / <a href="{url(lang, 'series/' + slug + '/')}">{esc(sname)}</a> / {esc(artist)}</nav>
+    <span class="series-tag">{esc(sname.upper())}</span>
+    <h1>{esc(title)}</h1>
+    <p class="lead">{esc(t(ep['lead'], lang))}</p>
+    <p class="meta">{t(UI['by_bej'], lang)} · {t(UI['published'], lang)} <time datetime="{first['date']}">{fmt_date(first['date'], lang)}</time></p>
+    <dl class="facts artist-facts">{facts}</dl>
+    <nav class="toc"><h2>{t(UI['parts_title'], lang)}</h2><ol>{toc}</ol></nav>
+    {parts_html}
+    <div class="ep-body">
+      <h2>{t(UI['more_in_series'], lang)} {esc(sname)}</h2>
+      <ul class="more-list">{more}</ul>
+    </div>
+  </div>
+</article>
+"""
+    schema = [breadcrumb(lang, [(t(UI["nav_series"], lang), "series/"), (sname, f"series/{slug}/"), (artist, path)]), {
+        "@context": "https://schema.org", "@type": "Article", "headline": title, "description": t(ep["lead"], lang),
+        "datePublished": iso_datetime(first), "inLanguage": lang,
+        "about": {"@type": "Person", "name": artist},
+        "author": {"@type": "Person", "name": "Bej", "url": SITE["url"] + url(lang, "about/")},
+        "publisher": {"@type": "Organization", "name": SITE["name"], "logo": {"@type": "ImageObject", "url": SITE["url"] + "/assets/avatar.png"}},
+        "mainEntityOfPage": SITE["url"] + url(lang, path),
+        "video": videos_schema,
+    }]
+    desc = t(ep["lead"], lang)
+    if len(desc) > 158:
+        desc = desc[:155].rsplit(" ", 1)[0] + "..."
+    page(lang, path, f"{title}, {sname}", desc, body, active="nav_series", body_class="read", schema=schema)
+
+
 def build_collabs(lang):
     cards = "".join(f'<div class="card"><h3>{t(h, lang)}</h3><p>{t(p, lang)}</p></div>' for h, p in COLLABS["cards"])
     body = f"""
@@ -500,7 +583,7 @@ def build_extras():
     ]
     for s in SERIES_DATA["series"]:
         lines.append(f"- [{t(SERIES[s['slug']]['name'], 'en')}]({SITE['url']}/series/{s['slug']}/): {t(SERIES[s['slug']]['short'], 'en')}")
-    lines += ["", "## Cover Atlas episodes"]
+    lines += ["", "## Episode and artist pages"]
     for e in EPISODES:
         lines.append(f"- [{t(e['title'], 'en')}]({SITE['url']}{ep_url('en', e)}): {t(e['lead'], 'en')}")
     lines += ["", "## Profiles"] + [f"- [{n}]({u})" for n, u in SOCIAL]
@@ -517,6 +600,6 @@ if __name__ == "__main__":
         for s in SERIES_DATA["series"]:
             build_series_page(lang, s["slug"])
         for ep in EPISODES:
-            build_episode(lang, ep)
+            (build_artist if "parts" in ep else build_episode)(lang, ep)
         build_collabs(lang)
     build_extras()
