@@ -210,12 +210,6 @@ body.read { background: var(--paper); }
 
 /* Footer legal links */
 .site-footer .legal { display: flex; gap: 16px; align-items: center; }
-.site-footer .legal a, .site-footer .cc-link { font-family: var(--body); font-size: 14px; letter-spacing: 0; color: var(--white); opacity: .8; background: none; border: 0; cursor: pointer; text-decoration: underline; padding: 0; }
-.privacy p { font-family: var(--serif); }
+.site-footer .legal a, .site-footer .privacy p { font-family: var(--serif); }
 
 /* Cookie banner in site colors */
-#cc-main { --cc-font-family: var(--body); --cc-bg: #fff; --cc-primary-color: var(--navy); --cc-secondary-color: #2f4a43;
-  --cc-btn-primary-bg: var(--navy); --cc-btn-primary-color: #fff; --cc-btn-primary-hover-bg: #0b3a2c;
-  --cc-btn-secondary-bg: var(--lime); --cc-btn-secondary-color: var(--navy); --cc-btn-secondary-hover-bg: #b6e650;
-  --cc-toggle-on-bg: var(--pink); --cc-modal-border-radius: 16px; --cc-btn-border-radius: 999px; }
-#cc-main .cm__title { font-family: var(--display); font-size: 26px; letter-spacing: 1px; font-weight: 400; }

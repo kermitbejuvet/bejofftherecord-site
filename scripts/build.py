@@ -27,9 +27,8 @@ SITE = {
     "tiktok": "https://www.tiktok.com/@bejofftherecord",
     "instagram": "https://www.instagram.com/bejofftherecord/",
     "youtube": "https://www.youtube.com/@bejofftherecord",
-    "gtm": "GTM-5VGJXNF3",
+    "goatcounter": "",  # GoatCounter site code, e.g. "bejofftherecord"
     # Controller details for the privacy policy (name, postal address, email). Required before publishing.
-    "controller": "",
 }
 SOCIAL = [("TikTok", SITE["tiktok"]), ("Instagram", SITE["instagram"]), ("YouTube", SITE["youtube"])]
 
@@ -134,12 +133,12 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
     )
     footer_links = "".join(f'<a href="{u}" target="_blank" rel="noopener">{n}</a>' for n, u in SOCIAL)
     schema_html = "".join(jsonld(s) for s in (schema or []))
+    goat = (f'\n<script data-goatcounter="https://{SITE["goatcounter"]}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
+            if SITE["goatcounter"] else "")
     doc = f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}});</script>
-<script type="text/plain" data-category="analytics">(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','{SITE["gtm"]}');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
@@ -154,7 +153,6 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/avatar.png">
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/vendor/cookieconsent.css">
 <link rel="stylesheet" href="/assets/style.css">
 {schema_html}
 </head>
@@ -173,13 +171,11 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
   <div class="wrap">
     <div class="links">{footer_links}</div>
     <div class="langs">{switch}</div>
-    <div class="legal"><a href="{url(lang, 'privacy/')}">{t(UI['privacy'], lang)}</a><button type="button" class="cc-link" data-cc="show-preferencesModal">{t(UI['cookie_settings'], lang)}</button></div>
+    <div class="legal"><a href="{url(lang, 'privacy/')}">{t(UI['privacy'], lang)}</a></div>
     <small>&copy; 2026 Bej Off The Record</small>
   </div>
 </footer>
-<script src="/assets/site.js" defer></script>
-<script src="/assets/vendor/cookieconsent.umd.js" defer></script>
-<script src="/assets/consent.js" defer></script>
+<script src="/assets/site.js" defer></script>{goat}
 </body>
 </html>
 """
@@ -564,12 +560,9 @@ def build_collabs(lang):
 
 
 def build_privacy(lang):
-    controller = SITE["controller"] or "[CONTROLLER NAME, ADDRESS AND EMAIL: TO BE ADDED]"
-    if not SITE["controller"]:
-        print("WARNING: SITE['controller'] is empty; privacy page has a placeholder")
     sections = ""
     for h, paras in PRIVACY["sections"]:
-        body = "".join(f"<p>{esc(p).replace('{controller}', esc(controller))}</p>" for p in paras[lang])
+        body = "".join(f"<p>{esc(p).replace('{instagram}', SITE['instagram'])}</p>" for p in paras[lang])
         sections += f"<h2>{t(h, lang)}</h2>{body}"
     body = f"""
 <article class="reading">
