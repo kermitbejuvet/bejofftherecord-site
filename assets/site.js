@@ -3,16 +3,18 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".menu-toggle")) document.querySelector(".nav").classList.toggle("open");
 });
 
-// Click-to-load TikTok player: nothing is loaded from TikTok until the visitor clicks
+// Click-to-load player: nothing is loaded from YouTube or TikTok until the visitor clicks
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".lite button");
   if (!btn) return;
   const box = btn.parentElement;
   const frame = document.createElement("iframe");
-  frame.src = `https://www.tiktok.com/player/v1/${box.dataset.id}?autoplay=1&rel=0&description=0`;
+  frame.src = box.dataset.yt
+    ? `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&playsinline=1&rel=0`
+    : `https://www.tiktok.com/player/v1/${box.dataset.id}?autoplay=1&rel=0&description=0`;
   frame.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
   frame.allowFullscreen = true;
-  frame.title = btn.getAttribute("aria-label") || "TikTok video";
+  frame.title = btn.getAttribute("aria-label") || "Video";
   box.replaceChildren(frame);
 });
 

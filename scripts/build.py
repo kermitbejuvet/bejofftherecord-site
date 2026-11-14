@@ -34,6 +34,9 @@ SOCIAL = [("TikTok", SITE["tiktok"]), ("Instagram", SITE["instagram"]), ("YouTub
 
 SERIES_DATA = json.loads((ROOT / "data" / "series-videos.json").read_text())
 META = json.loads((ROOT / "data" / "video-meta.json").read_text())
+# TikTok video id -> YouTube Shorts id (same video re-posted on YouTube)
+YT = json.loads((ROOT / "data" / "youtube-map.json").read_text())
+THUMBS = ROOT / "assets" / "thumbs"
 EPISODES = []
 for f in sorted((ROOT / "data" / "episodes").glob("*.json")):
     EPISODES.extend(json.loads(f.read_text()))
@@ -185,12 +188,44 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
     WRITTEN.append(url(lang, path))
 
 
+def thumb(vid):
+    """Self-hosted 9:16 thumbnail path for a TikTok id, or "" if none has been fetched yet."""
+    yt = YT.get(vid)
+    return f"/assets/thumbs/{yt}.jpg" if yt and (THUMBS / f"{yt}.jpg").exists() else ""
+
+
 def lite_video(vid, label, lang):
-    """Click-to-load TikTok player. Nothing loads from TikTok until clicked."""
+    """Click-to-load player. Uses YouTube (privacy-enhanced mode) when the video is on YouTube,
+    otherwise TikTok. Nothing is loaded from either platform until the visitor clicks."""
+    yt = YT.get(vid)
+    data = f' data-yt="{yt}"' if yt else ""
+    img = f'<img src="{thumb(vid)}" alt="" loading="lazy" width="360" height="640">' if thumb(vid) else ""
     return (
-        f'<div class="lite" data-id="{vid}"><button type="button" aria-label="{esc(label)}">'
+        f'<div class="lite{" has-thumb" if img else ""}" data-id="{vid}"{data}>{img}<button type="button" aria-label="{esc(label)}">'
         f'<span class="play" aria-hidden="true"></span><span class="lite-label">{t(UI["play"], lang)}</span></button></div>'
     )
+
+
+def platform_links(vid, lang):
+    """Links to the same video on TikTok, YouTube and Instagram."""
+    yt = YT.get(vid)
+    links = [("TikTok", f"https://www.tiktok.com/@bejofftherecord/video/{vid}"),
+             ("YouTube", f"https://www.youtube.com/shorts/{yt}" if yt else SITE["youtube"]),
+             ("Instagram", SITE["instagram"])]
+    return ('<span class="on-platforms">' + t(UI["watch_on"], lang) + " " +
+            "".join(f'<a href="{u}" target="_blank" rel="noopener">{n}</a>' for n, u in links) + "</span>")
+
+
+def vo_fields(vid):
+    """embedUrl, url, thumbnailUrl and sameAs for VideoObject structured data."""
+    yt = YT.get(vid)
+    tiktok = f"https://www.tiktok.com/@bejofftherecord/video/{vid}"
+    if yt:
+        return {"embedUrl": f"https://www.youtube.com/embed/{yt}", "url": f"https://www.youtube.com/shorts/{yt}",
+                "thumbnailUrl": SITE["url"] + thumb(vid) if thumb(vid) else f"https://i.ytimg.com/vi/{yt}/hqdefault.jpg",
+                "sameAs": [tiktok]}
+    return {"embedUrl": f"https://www.tiktok.com/player/v1/{vid}", "url": tiktok,
+            "thumbnailUrl": SITE["url"] + "/assets/og.jpg"}
 
 
 def ep_url(lang, ep):
@@ -363,7 +398,7 @@ def build_series_page(lang, slug):
           <p class="ep-meta"><span class="num">{t(UI['ep'], lang)} {i}</span> {when}</p>
           {heading}
           <p lang="{text_lang}">{esc(text)}</p>
-          <p class="ep-links">{read}<a href="https://www.tiktok.com/@bejofftherecord/video/{vid}" target="_blank" rel="noopener">{t(UI['open_tiktok'], lang)}</a></p>
+          <p class="ep-links">{read}{platform_links(vid, lang)}</p>
         </div>
       </li>"""
     all_translated = all(v in EPISODE_BY_VIDEO for v in vids)
@@ -422,7 +457,6 @@ def build_episode(lang, ep):
     others = [e for e in EPISODES if e["series"] == slug and e is not ep]
     more = "".join(f'<li><a href="{ep_url(lang, o)}">{esc(t(o["title"], lang))}</a></li>' for o in others)
     title = t(ep["title"], lang)
-    tiktok = f"https://www.tiktok.com/@bejofftherecord/video/{ep['video']}"
     body = f"""
 <article class="reading">
   <div class="wrap">
@@ -433,7 +467,7 @@ def build_episode(lang, ep):
     <p class="meta">{t(UI['by_bej'], lang)} · {t(UI['published'], lang)} <time datetime="{m['date']}">{fmt_date(m['date'], lang)}</time></p>
     <div class="ep-grid">
       <aside class="ep-video">{lite_video(ep['video'], t(UI['watch_episode'], lang), lang)}
-        <a class="small" href="{tiktok}" target="_blank" rel="noopener">{t(UI['open_tiktok'], lang)}</a></aside>
+        <p class="small">{platform_links(ep['video'], lang)}</p></aside>
       <div class="ep-body">
         <dl class="facts">{facts}</dl>
         <h2>{t(UI['the_story'], lang)}</h2>
@@ -450,8 +484,7 @@ def build_episode(lang, ep):
 """
     schema = [breadcrumb(lang, [(t(UI["nav_series"], lang), "series/"), (sname, f"series/{slug}/"), (title, path)]), {
         "@context": "https://schema.org", "@type": "VideoObject", "name": title, "description": t(ep["lead"], lang),
-        "uploadDate": iso_datetime(m), "thumbnailUrl": SITE["url"] + "/assets/og.jpg",
-        "embedUrl": f"https://www.tiktok.com/player/v1/{ep['video']}", "url": tiktok, "inLanguage": "en",
+        "uploadDate": iso_datetime(m), **vo_fields(ep["video"]), "inLanguage": "en",
         "isPartOf": {"@type": "CreativeWorkSeries", "name": sname, "url": SITE["url"] + url(lang, f"series/{slug}/")},
         "creator": {"@type": "Organization", "name": SITE["name"], "url": SITE["url"]},
     }, {
@@ -483,13 +516,12 @@ def build_artist(lang, ep):
     videos_schema = []
     for n, p in enumerate(ep["parts"], start=1):
         m = META[p["video"]]
-        tiktok = f"https://www.tiktok.com/@bejofftherecord/video/{p['video']}"
         paras = "".join(f"<p>{esc(x)}</p>" for x in p["body"][lang])
         ptitle = f"{t(UI['part'], lang)} {n}: {t(p['title'], lang)}"
         parts_html += f"""
         <section class="part" id="part-{n}">
           <div class="part-video">{lite_video(p['video'], f"{artist}, {ptitle}", lang)}
-            <a class="small" href="{tiktok}" target="_blank" rel="noopener">{t(UI['open_tiktok'], lang)}</a></div>
+            <p class="small">{platform_links(p['video'], lang)}</p></div>
           <div class="part-text">
             <p class="ep-meta"><span class="num">{t(UI['part'], lang)} {n}</span> <time datetime="{m['date']}">{fmt_date(m['date'], lang)}</time></p>
             <h2>{esc(t(p['title'], lang))}</h2>
@@ -498,8 +530,7 @@ def build_artist(lang, ep):
         </section>"""
         videos_schema.append({
             "@type": "VideoObject", "name": f"{artist}, {ptitle}", "description": p["body"][lang][0],
-            "uploadDate": iso_datetime(m), "thumbnailUrl": SITE["url"] + "/assets/og.jpg",
-            "embedUrl": f"https://www.tiktok.com/player/v1/{p['video']}", "url": tiktok, "inLanguage": "en",
+            "uploadDate": iso_datetime(m), **vo_fields(p["video"]), "inLanguage": "en",
         })
     others = [e for e in EPISODES if e["series"] == slug and e is not ep]
     more = "".join(f'<li><a href="{ep_url(lang, o)}">{esc(t(o["title"], lang))}</a></li>' for o in others)

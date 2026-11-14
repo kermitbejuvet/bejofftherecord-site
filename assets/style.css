@@ -213,3 +213,9 @@ body.read { background: var(--paper); }
 .site-footer .legal a { font-family: var(--body); font-size: 14px; letter-spacing: 0; color: var(--white); opacity: .8; text-decoration: underline; }
 .privacy p { font-family: var(--serif); }
 
+
+/* Thumbnails and platform links */
+.lite img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lite.has-thumb button { background: linear-gradient(180deg, rgba(2,32,26,0) 45%, rgba(2,32,26,.75)); align-content: end; padding-bottom: 22px; }
+.on-platforms { display: inline-flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 14px; }
+.on-platforms a { display: inline-block; padding: 3px 10px; border-radius: 999px; border: 1.5px solid currentColor; text-decoration: none; font-weight: 700; font-size: 13px; }
