@@ -27,7 +27,7 @@ SITE = {
     "tiktok": "https://www.tiktok.com/@bejofftherecord",
     "instagram": "https://www.instagram.com/bejofftherecord/",
     "youtube": "https://www.youtube.com/@bejofftherecord",
-    "goatcounter": "",  # GoatCounter site code, e.g. "bejofftherecord"
+    "goatcounter": "kermibeju",  # GoatCounter site code, e.g. "bejofftherecord"
     # Controller details for the privacy policy (name, postal address, email). Required before publishing.
 }
 SOCIAL = [("TikTok", SITE["tiktok"]), ("Instagram", SITE["instagram"]), ("YouTube", SITE["youtube"])]
