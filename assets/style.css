@@ -210,6 +210,6 @@ body.read { background: var(--paper); }
 
 /* Footer legal links */
 .site-footer .legal { display: flex; gap: 16px; align-items: center; }
-.site-footer .legal a, .site-footer .privacy p { font-family: var(--serif); }
+.site-footer .legal a { font-family: var(--body); font-size: 14px; letter-spacing: 0; color: var(--white); opacity: .8; text-decoration: underline; }
+.privacy p { font-family: var(--serif); }
 
-/* Cookie banner in site colors */
