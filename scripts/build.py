@@ -27,6 +27,7 @@ SITE = {
     "tiktok": "https://www.tiktok.com/@bejofftherecord",
     "instagram": "https://www.instagram.com/bejofftherecord/",
     "youtube": "https://www.youtube.com/@bejofftherecord",
+    "gtm": "GTM-5VGJXNF3",
 }
 SOCIAL = [("TikTok", SITE["tiktok"]), ("Instagram", SITE["instagram"]), ("YouTube", SITE["youtube"])]
 
@@ -135,6 +136,7 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
+<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','{SITE["gtm"]}');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
@@ -155,6 +157,7 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
 {schema_html}
 </head>
 <body class="{body_class}">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={SITE['gtm']}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{url(lang)}"><img class="avatar" src="/assets/avatar.png" alt="" width="56" height="56"><span>BEJ OFF THE RECORD</span></a>
