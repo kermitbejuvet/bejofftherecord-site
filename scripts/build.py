@@ -18,7 +18,7 @@ from datetime import date
 from pathlib import Path
 
 from content import (ABOUT, COLLABS, HOME, LANGUAGES, LANGS, LOCALES, MONTHS,
-                     PLACES, SERIES, SERIES_PAGE, UI)
+                     PLACES, PRIVACY, SERIES, SERIES_PAGE, UI)
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = {
@@ -28,6 +28,8 @@ SITE = {
     "instagram": "https://www.instagram.com/bejofftherecord/",
     "youtube": "https://www.youtube.com/@bejofftherecord",
     "gtm": "GTM-5VGJXNF3",
+    # Controller details for the privacy policy (name, postal address, email). Required before publishing.
+    "controller": "",
 }
 SOCIAL = [("TikTok", SITE["tiktok"]), ("Instagram", SITE["instagram"]), ("YouTube", SITE["youtube"])]
 
@@ -136,7 +138,8 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
-<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','{SITE["gtm"]}');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}});</script>
+<script type="text/plain" data-category="analytics">(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','{SITE["gtm"]}');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
@@ -150,14 +153,12 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
 <meta property="og:image" content="{SITE["url"]}/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/avatar.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/vendor/cookieconsent.css">
 <link rel="stylesheet" href="/assets/style.css">
 {schema_html}
 </head>
 <body class="{body_class}">
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={SITE['gtm']}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{url(lang)}"><img class="avatar" src="/assets/avatar.png" alt="" width="56" height="56"><span>BEJ OFF THE RECORD</span></a>
@@ -172,10 +173,13 @@ def page(lang, path, title, description, body, active="", body_class="", schema=
   <div class="wrap">
     <div class="links">{footer_links}</div>
     <div class="langs">{switch}</div>
+    <div class="legal"><a href="{url(lang, 'privacy/')}">{t(UI['privacy'], lang)}</a><button type="button" class="cc-link" data-cc="show-preferencesModal">{t(UI['cookie_settings'], lang)}</button></div>
     <small>&copy; 2026 Bej Off The Record</small>
   </div>
 </footer>
 <script src="/assets/site.js" defer></script>
+<script src="/assets/vendor/cookieconsent.umd.js" defer></script>
+<script src="/assets/consent.js" defer></script>
 </body>
 </html>
 """
@@ -559,6 +563,26 @@ def build_collabs(lang):
     page(lang, "collabs/", t(COLLABS["title"], lang), t(COLLABS["description"], lang), body, active="nav_collabs")
 
 
+def build_privacy(lang):
+    controller = SITE["controller"] or "[CONTROLLER NAME, ADDRESS AND EMAIL: TO BE ADDED]"
+    if not SITE["controller"]:
+        print("WARNING: SITE['controller'] is empty; privacy page has a placeholder")
+    sections = ""
+    for h, paras in PRIVACY["sections"]:
+        body = "".join(f"<p>{esc(p).replace('{controller}', esc(controller))}</p>" for p in paras[lang])
+        sections += f"<h2>{t(h, lang)}</h2>{body}"
+    body = f"""
+<article class="reading">
+  <div class="wrap">
+    <h1>{t(PRIVACY['h1'], lang)}</h1>
+    <p class="meta">{t(PRIVACY['updated'], lang)}</p>
+    <div class="ep-body privacy">{sections}</div>
+  </div>
+</article>
+"""
+    page(lang, "privacy/", t(PRIVACY["title"], lang), t(PRIVACY["h1"], lang) + ", Bej Off The Record", body, body_class="read")
+
+
 def build_extras():
     """Sitemap with hreflang, robots.txt, llms.txt and CNAME."""
     bases = sorted({re.sub(r"^/(de|es)/", "/", p) for p in WRITTEN})
@@ -605,4 +629,5 @@ if __name__ == "__main__":
         for ep in EPISODES:
             (build_artist if "parts" in ep else build_episode)(lang, ep)
         build_collabs(lang)
+        build_privacy(lang)
     build_extras()
