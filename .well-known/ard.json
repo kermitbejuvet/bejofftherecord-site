@@ -1,0 +1,46 @@
+{
+  "specVersion": "0.91",
+  "host": {
+    "displayName": "Bej Off The Record",
+    "identifier": "bejofftherecord.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:bejofftherecord.com:content:llms-txt",
+      "displayName": "Bej Off The Record: guide for AI (llms.txt)",
+      "type": "text/plain",
+      "url": "https://bejofftherecord.com/llms.txt",
+      "description": "Summary of Bej Off The Record, a music history channel, with links to every series, episode and artist page in English, German and Spanish.",
+      "representativeQueries": [
+        "history of the song Ya Mustafa and its cover versions",
+        "Mexican music history explained episode by episode",
+        "Shirley Manson biography Frontwoman series"
+      ],
+      "tags": [
+        "music history",
+        "music",
+        "deep dives",
+        "cover versions"
+      ],
+      "updatedAt": "2026-11-15T00:00:00Z"
+    },
+    {
+      "identifier": "urn:air:bejofftherecord.com:content:sitemap",
+      "displayName": "Bej Off The Record: sitemap",
+      "type": "application/xml",
+      "url": "https://bejofftherecord.com/sitemap.xml",
+      "description": "All pages of the site with language alternates.",
+      "representativeQueries": [
+        "list all Bej Off The Record episodes",
+        "Cover Atlas episodes"
+      ],
+      "tags": [
+        "music history",
+        "music",
+        "deep dives",
+        "cover versions"
+      ],
+      "updatedAt": "2026-11-15T00:00:00Z"
+    }
+  ]
+}

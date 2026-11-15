@@ -27,3 +27,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://bejofftherecord.com/sitemap.xml
+Agentmap: https://bejofftherecord.com/.well-known/ard.json

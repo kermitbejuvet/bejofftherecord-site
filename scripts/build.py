@@ -607,6 +607,39 @@ def build_privacy(lang):
     page(lang, "privacy/", t(PRIVACY["title"], lang), t(PRIVACY["h1"], lang) + ", Bej Off The Record", body, body_class="read")
 
 
+def build_ard():
+    """Agentic Resource Discovery manifest (/.well-known/ard.json, plus the legacy ai-catalog.json path).
+
+    The site offers no tools or APIs, so the entries point agents to the readable content:
+    llms.txt and the sitemap.
+    """
+    host = SITE["url"].split("//")[1]
+    today = date.today().isoformat() + "T00:00:00Z"
+    common = {"tags": ["music history", "music", "deep dives", "cover versions"], "updatedAt": today}
+    manifest = {
+        "specVersion": "0.91",
+        "host": {"displayName": SITE["name"], "identifier": host},
+        "entries": [
+            {"identifier": f"urn:air:{host}:content:llms-txt", "displayName": f"{SITE['name']}: guide for AI (llms.txt)",
+             "type": "text/plain", "url": f"{SITE['url']}/llms.txt",
+             "description": "Summary of Bej Off The Record, a music history channel, with links to every series, "
+                            "episode and artist page in English, German and Spanish.",
+             "representativeQueries": ["history of the song Ya Mustafa and its cover versions",
+                                       "Mexican music history explained episode by episode",
+                                       "Shirley Manson biography Frontwoman series"], **common},
+            {"identifier": f"urn:air:{host}:content:sitemap", "displayName": f"{SITE['name']}: sitemap",
+             "type": "application/xml", "url": f"{SITE['url']}/sitemap.xml",
+             "description": "All pages of the site with language alternates.",
+             "representativeQueries": ["list all Bej Off The Record episodes", "Cover Atlas episodes"], **common},
+        ],
+    }
+    out = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
+    wk = ROOT / ".well-known"
+    wk.mkdir(exist_ok=True)
+    (wk / "ard.json").write_text(out)
+    (wk / "ai-catalog.json").write_text(out)
+
+
 def build_extras():
     """Sitemap with hreflang, robots.txt, llms.txt and CNAME."""
     bases = sorted({re.sub(r"^/(de|es)/", "/", p) for p in WRITTEN})
@@ -624,7 +657,8 @@ def build_extras():
     bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "PerplexityBot",
             "Google-Extended", "Applebot-Extended"]
     robots = "User-agent: *\nAllow: /\nDisallow: /preview/\n\n" + "".join(f"User-agent: {b}\nAllow: /\n\n" for b in bots)
-    (ROOT / "robots.txt").write_text(robots + f"Sitemap: {SITE['url']}/sitemap.xml\n")
+    (ROOT / "robots.txt").write_text(robots + f"Sitemap: {SITE['url']}/sitemap.xml\n"
+                                     f"Agentmap: {SITE['url']}/.well-known/ard.json\n")
     lines = [
         "# Bej Off The Record", "",
         "> Music history channel by Bej on TikTok, Instagram and YouTube. Short episodes with names, dates and an opinion: "
@@ -640,6 +674,7 @@ def build_extras():
     lines += ["", "## Profiles"] + [f"- [{n}]({u})" for n, u in SOCIAL]
     (ROOT / "llms.txt").write_text("\n".join(lines) + "\n")
     (ROOT / "CNAME").write_text("bejofftherecord.com\n")
+    build_ard()
     print(f"Wrote {len(WRITTEN)} pages, sitemap.xml, robots.txt, llms.txt")
 
 
